@@ -1,10 +1,21 @@
 .titulo{
     color: blue;
     text-align: center;
+
+    /* background gradient */
+    background: -webkit-linear-gradient(left, #ff1053 0%, #ff4f0f 100%);
+    background: linear-gradient(to right, #ff1053 0%, #ff4f0f 100%);
+
+      /* background imagem gif */
+    background-image: url('./imagens/fire-51.gif');
+
+    /* /* background texto com Imagem gif */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .img{
-    width: 500px;
-    height: 500px;
+    width: 80%;
+    height: 20%;
     display: block;
     margin: 0 auto;
 }
