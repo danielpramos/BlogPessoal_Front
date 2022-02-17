@@ -1,27 +1,33 @@
 import React from "react";
 import { AppBar, Toolbar, Box, Typography } from "@material-ui/core"
+import './Navbar.css'
 
 function Navbar() {
     return (
         <>
-            <AppBar position="static">
-                <Toolbar variant="dense">
 
-                    <Box style={{ cursor: "pointer" }}>
-                        <Typography variant="h5" color="inherit">
-                            BlogPessoal
-                        </Typography>
-                    </Box>
+            <AppBar position="static">
+                <Toolbar className="container" variant="dense">
 
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={1} style={{ cursor: "pointer" }} >
+                            <Typography variant="h5" color="inherit">
+                                BlogPessoal
+                            </Typography>
+                        </Box>
+                    </Box>
+
+                    
+
+                    <Box className="navSpace navPadding " display="flex" justifyContent="start">
+                        <Box className="navPadding:hover" mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
                                 Home
                             </Typography>
                         </Box>
                     </Box>
 
-                    <Box display="flex" justifyContent="start">
+                    <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
                         <Box mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
                                 Postagens
@@ -29,7 +35,7 @@ function Navbar() {
                         </Box>
                     </Box>
 
-                    <Box display="flex" justifyContent="start">
+                    <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
                         <Box mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
                                 Temas
@@ -37,7 +43,7 @@ function Navbar() {
                         </Box>
                     </Box>
 
-                    <Box display="flex" justifyContent="start">
+                    <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
                         <Box mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
                                 Cadastrar Tema
@@ -45,9 +51,17 @@ function Navbar() {
                         </Box>
                     </Box>
 
-                    <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                    <Box className="navPaddingCanto navSpace " display="flex" justifyContent="start">
+                        <Box className= "navPaddingCanto:hover" mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
+                                Login
+                            </Typography>
+                        </Box>
+                    </Box>
+
+                    <Box  className="navPaddingCanto" display="flex" justifyContent="start">
+                        <Box className= "navPaddingCanto:hover" mx={1} style={{ cursor: "pointer" }}>
+                            <Typography className="navPaddingCanto:hover" variant="h6" color="inherit">
                                 Logout
                             </Typography>
                         </Box>

@@ -1,4 +1,12 @@
-.titulo{
+.homevh{
+  padding: 3px;
+  width: 100vw;
+  min-height: calc(100vh - 50%);
+  max-height: 100vh;
+  /* background-image: url("https://media3.giphy.com/media/dyjrpqaUVqCELGuQVr/giphy.gif"); */
+  
+}
+.fire{
     color: blue;
     text-align: center;
 
@@ -13,9 +21,18 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.img{
-    width: 80%;
-    height: 20%;
+img{
+    width: 500px;
+    height: 400px;
     display: block;
-    margin: 0 auto;
+    padding: 37px 0px 10px 0px  !important;
+    border-radius:10%;
+    opacity: 90%;
+}
+
+
+.hoverButton:hover{
+  transform: scale(1.2);
+  background-color: #edffb3!important;
+  color: #000000!important;
 }
