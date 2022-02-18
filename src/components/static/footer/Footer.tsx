@@ -11,38 +11,38 @@ function Footer() {
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
+                    <Box className='box1'>
 
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}> Siga-nos nas redes sociais</Typography>
+                            <Typography variant="h6" align="center" gutterBottom className="textos"> Siga-nos nas redes sociais</Typography>
                         </Box>
 
                         <Box  display="flex" alignItems="center" justifyContent="center">
                             <a className= "hover" href="https://www.linkedin.com/in/dnldev/" target="_blank" >
-                                < LinkedInIcon style={{ fontSize: 50, color: "white" }} />
+                                < LinkedInIcon className="redes1"/>
                             </a>
 
                             <a className= "hover" href="https://www.facebook.com/daniel.pinheiro.92102" target="_blank" >
-                                < FacebookIcon style={{ fontSize: 50, color: "white" }} />
+                                < FacebookIcon className="redes1" />
                             </a>
 
                             <a className= "hover" href="https://www.instagram.com/daniel_pinheiro5291/" target="_blank" >
-                                < InstagramIcon style={{ fontSize: 50, color: "white", padding: "0px 2px" }} />
+                                < InstagramIcon className="redes2" />
                             </a>
 
                             <a className= "hover" href="https://github.com/danielpramos" target="_blank" >
-                                < GitHubIcon style={{ fontSize: 40, color: "white", paddingLeft: "5px"  }} />
+                                < GitHubIcon className="redes3" />
                             </a>
                         </Box>
 
-                        <Box style={{ backgroundColor: "#303F9F", height: "60px" }}>
+                        <Box className="box2">
                             <Box paddingTop={1}>
-                                <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }}>© 2022 Copyright </Typography>
+                                <Typography variant="subtitle2" align="center" gutterBottom className="textos">© 2022 Copyright </Typography>
                             </Box>
 
-                            <Box>
+                           <Box>
                                 <a target="_blank" href="https://brasil.generation.org">
-                                    <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }}>brasil.generation.org</Typography>
+                                    <Typography variant="subtitle2" align="center" gutterBottom className="textos">brasil.generation.org</Typography>
                                 </a>
                             </Box>
                         </Box>

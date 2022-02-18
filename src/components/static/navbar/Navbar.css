@@ -1,7 +1,18 @@
+.cursor{
+    cursor: pointer;
+    /* color: #ffffff; */
 
-.navSpace{
+}
+.text-decorator-none{
+    text-decoration: none;
+}
+.navSpaceLeft{
     margin-left: auto!important;
     
+  }
+  .navSpaceRight{
+    margin-right: auto!important;
+
   }
   .navPadding{
       background-color: #349e9780;
@@ -20,6 +31,7 @@
     background-color: none;
     border-radius: 10px;
     padding: 0px 10px;
+    color: #ffffff; 
 }
 .navPaddingCanto:hover{
     border-bottom-style: double!important;

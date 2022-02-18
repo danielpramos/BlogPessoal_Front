@@ -1,5 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Box, Typography } from "@material-ui/core"
+import { Link } from "react-router-dom";
 import './Navbar.css'
 
 function Navbar() {
@@ -10,17 +11,17 @@ function Navbar() {
                 <Toolbar className="container" variant="dense">
 
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }} >
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h5" color="inherit">
                                 BlogPessoal
                             </Typography>
                         </Box>
                     </Box>
 
-                    
 
-                    <Box className="navSpace navPadding " display="flex" justifyContent="start">
-                        <Box className="navPadding:hover" mx={1} style={{ cursor: "pointer" }}>
+
+                    <Box className="navSpaceLeft navPadding " display="flex" justifyContent="start">
+                        <Box className="navPadding:hover cursor" mx={1} >
                             <Typography variant="h6" color="inherit">
                                 Home
                             </Typography>
@@ -28,7 +29,7 @@ function Navbar() {
                     </Box>
 
                     <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Postagens
                             </Typography>
@@ -36,36 +37,41 @@ function Navbar() {
                     </Box>
 
                     <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Temas
                             </Typography>
                         </Box>
                     </Box>
 
-                    <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                    <Box className="navPadding navPadding:hover navSpaceRight" marginRight='auto' display="flex" justifyContent="start">
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Cadastrar Tema
                             </Typography>
                         </Box>
                     </Box>
 
-                    <Box className="navPaddingCanto navSpace " display="flex" justifyContent="start">
-                        <Box className= "navPaddingCanto:hover" mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                Login
-                            </Typography>
+                    <Link to='/login' className='text-decorator-none'>
+                        <Box className="navPaddingCanto "  display="flex" justifyContent="start">
+                            <Box className="navPaddingCanto:hover cursor" mx={1}>
+                                <Typography variant="h6" color="inherit">
+                                    Login
+                                </Typography>
+                            </Box>
                         </Box>
-                    </Box>
+                    </Link>
 
-                    <Box  className="navPaddingCanto" display="flex" justifyContent="start">
-                        <Box className= "navPaddingCanto:hover" mx={1} style={{ cursor: "pointer" }}>
-                            <Typography className="navPaddingCanto:hover" variant="h6" color="inherit">
-                                Logout
-                            </Typography>
+                    <Link to='/home' className='text-decorator-none'>
+                        <Box className="navPaddingCanto" display="flex" justifyContent="start">
+                            <Box className="navPaddingCanto:hover cursor" mx={1}>
+                                <Typography className="navPaddingCanto:hover" variant="h6" color="inherit">
+                                    Logout
+                                </Typography>
+                            </Box>
                         </Box>
-                    </Box>
+
+                    </Link>
 
                 </Toolbar>
             </AppBar>
