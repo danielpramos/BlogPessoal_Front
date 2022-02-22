@@ -5,7 +5,7 @@ import Footer from './components/static/footer/Footer';
 import './App.css';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
-import { Grid } from '@material-ui/core'
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 
 
@@ -17,7 +17,7 @@ function App() {
         <div style={{ minHeight: '100vh'}}>
 
         <Route exact path='/'>
-            <Home />
+            <Login />
           </Route>
 
           <Route path='/login'>
@@ -27,6 +27,11 @@ function App() {
           <Route path='/home'>
             <Home />
           </Route>
+
+          <Route path='/cadastrousuario'>
+            <CadastroUsuario />
+          </Route>
+          
 
         </div>
       </Switch>

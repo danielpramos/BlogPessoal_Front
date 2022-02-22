@@ -13,7 +13,7 @@ function Navbar() {
                     <Box display="flex" justifyContent="start">
                         <Box mx={1} className='cursor'>
                             <Typography variant="h5" color="inherit">
-                                BlogPessoal
+                                OtakuGeek
                             </Typography>
                         </Box>
                     </Box>
@@ -47,7 +47,7 @@ function Navbar() {
                     <Box className="navPadding navPadding:hover navSpaceRight" marginRight='auto' display="flex" justifyContent="start">
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                                Cadastrar Tema
+                                Criar Tema
                             </Typography>
                         </Box>
                     </Box>
@@ -56,13 +56,13 @@ function Navbar() {
                         <Box className="navPaddingCanto "  display="flex" justifyContent="start">
                             <Box className="navPaddingCanto:hover cursor" mx={1}>
                                 <Typography variant="h6" color="inherit">
-                                    Login
+                                    
                                 </Typography>
                             </Box>
                         </Box>
                     </Link>
 
-                    <Link to='/home' className='text-decorator-none'>
+                    <Link to='/Login' className='text-decorator-none'>
                         <Box className="navPaddingCanto" display="flex" justifyContent="start">
                             <Box className="navPaddingCanto:hover cursor" mx={1}>
                                 <Typography className="navPaddingCanto:hover" variant="h6" color="inherit">
