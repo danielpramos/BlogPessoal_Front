@@ -26,8 +26,9 @@ function CadastroUsuario() {
         });  
         
      useEffect(() => {
-         if(userResult.id != 0){
+         if(userResult.id !== 0){
              history.push('/login')
+             console.log(userResult)
          }
      }, [userResult]);
      
@@ -47,7 +48,7 @@ function CadastroUsuario() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
-        if(confirmarSenha == user.senha && user.senha.length >= 8){
+        if(confirmarSenha === user.senha && user.senha.length >= 8){
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
             alert('Usuário cadastrado com sucesso')
         }else{

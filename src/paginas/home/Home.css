@@ -4,7 +4,23 @@
 .titulo{
   color: #ffffff!important; 
   font-weight: bold!important;
-   padding: 0px 5px!important;
+   padding: 0px 10px!important;
+}
+.titulo2{
+  padding: 10px;
+  margin: 20px;
+  font-size: 80px!important;
+  background-color: #30ce57!important;
+  border-style: double;
+  border-radius: 10px;
+
+}
+.titulo3{
+  background: -webkit-linear-gradient(left, #ff1053 0%, #ff4f0f 100%);
+  background: linear-gradient(to right, #ff1053 0%, #ff4f0f 100%);
+
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .button{
   border-color: #ffffff!important;
@@ -16,12 +32,17 @@
   background-color: #edffb3!important;
   color: #000000!important;
 }
+
 .homevh{
   padding: 5%!important;
-  /* width: 100vw!important; */
-  /* min-height: calc(100vh - 50%)!important; */
-  height: 100vh!important;
+  width: auto!important;
+  min-height: calc(100vh - 20px)!important;
+  height: auto!important;
   /* background-image: url("https://media3.giphy.com/media/dyjrpqaUVqCELGuQVr/giphy.gif"); */
+  /* background-image: url(https://i.pinimg.com/originals/42/86/d3/4286d3a2fbc6a585e066bfdb3fef2c73.jpg); */
+  background-image: url(https://ovicio.com.br/wp-content/uploads/one-punch-man-season-2-netflix-release.jpg);
+  background-size: cover;
+  background-position: top!important;
   
 }
 .fire{
@@ -48,7 +69,7 @@ img{
     opacity: 90%;
 }
 .postagens{
-  background-color: #ffffff!important ;
+  background-color: #ffffff!important;
 }
 
 

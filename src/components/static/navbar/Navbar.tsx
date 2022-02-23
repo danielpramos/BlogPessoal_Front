@@ -19,30 +19,35 @@ function Navbar() {
                     </Box>
 
 
-
-                    <Box className="navSpaceLeft navPadding " display="flex" justifyContent="start">
-                        <Box className="navPadding:hover cursor" mx={1} >
-                            <Typography variant="h6" color="inherit">
-                                Home
-                            </Typography>
+                    <Link to='/home' className='text-decorator-none navSpaceLeft navPadding'>
+                        <Box display="flex" justifyContent="center">
+                            <Box className="navPadding:hover cursor" mx={1} >
+                                <Typography variant="h6" color="inherit">
+                                    Home
+                                </Typography>
+                            </Box>
                         </Box>
-                    </Box>
+                    </Link>
 
-                    <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Postagens
-                            </Typography>
+                    <Link to='/postagens' className='text-decorator-none'>
+                        <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Postagens
+                                </Typography>
+                            </Box>
                         </Box>
-                    </Box>
+                    </Link>
 
-                    <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Temas
-                            </Typography>
+                    <Link to='/temas' className='text-decorator-none'>
+                        <Box className="navPadding navPadding:hover" display="flex" justifyContent="start">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Temas
+                                </Typography>
+                            </Box>
                         </Box>
-                    </Box>
+                    </Link>
 
                     <Box className="navPadding navPadding:hover navSpaceRight" marginRight='auto' display="flex" justifyContent="start">
                         <Box mx={1} className='cursor'>
@@ -53,10 +58,10 @@ function Navbar() {
                     </Box>
 
                     <Link to='/login' className='text-decorator-none'>
-                        <Box className="navPaddingCanto "  display="flex" justifyContent="start">
+                        <Box className="navPaddingCanto " display="flex" justifyContent="start">
                             <Box className="navPaddingCanto:hover cursor" mx={1}>
                                 <Typography variant="h6" color="inherit">
-                                    
+
                                 </Typography>
                             </Box>
                         </Box>

@@ -1,6 +1,6 @@
 .cursor{
     cursor: pointer;
-    /* color: #ffffff; */
+    color: #ffffff;
 
 }
 .text-decorator-none{
@@ -44,4 +44,7 @@
 }
 .container{
     /* justify-content: 100px!important; */
+}
+.button{
+
 }

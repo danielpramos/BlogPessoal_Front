@@ -29,7 +29,7 @@ function Login() {
     }
 
         useEffect(() => {
-            if (token != '') {
+            if (token !== '') {
                 history.push('/home')
             }
         }, [token])
@@ -45,6 +45,9 @@ function Login() {
             alert('Dados do usuário inconsistentes.Erro ao logar!')
 
         }
+
+        console.log('userLogin:' + Object.values(userLogin));
+
     }
 
     return (
