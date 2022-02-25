@@ -12,13 +12,28 @@ import Carousel from 'react-elastic-carousel';
     Esses códigos "tipam" e liberam o uso de imgs quando usamos Typescript
 */
 
-// import arcane from '../../assets/images/arcane.jpg'  // Importação de imagens Locais
+ import arcane from '../../assets/images/arcane.jpg';  // Importação de imagens Locais
+ import jujutsukaisen from '../../assets/images/JujutsuKaisen.jpg';
+ import babyyoda from '../../assets/images/BabyYoda.jpg';
+ import homemaranha from '../../assets/images/HomemAranha.jpg';
+ import kimetsunoyaiba from '../../assets/images/KimetsuNoYaiba.jpg';
+ import harrypotter from '../../assets/images/HarryPotter.jpg';
+ import perdidosnoespaco from '../../assets/images/PerdidosNoEspaco.jpg';
+ import naruto from '../../assets/images/Naruto.jpg';
 
 import './CarouselComponent.css'
 
 function CarouselComponent() {
     var items = [
-        { img: "https://www.riotgames.com/darkroom/1440/b540da2b9afe5ec83e842a2d84f6dbb1:e95535ecd35e48592908762c9353926a/arcane-final-poster-16x9-no-text-no-border.jpg" },
+        { img: arcane },
+        { img: jujutsukaisen},
+        { img: babyyoda},
+        { img: homemaranha},
+        { img: kimetsunoyaiba},
+        { img: harrypotter},
+        { img: perdidosnoespaco},
+        { img: naruto},
+        
         { img: "https://trecobox.com.br/wp-content/uploads/2021/11/Arcane-2.jpg" },
         { img: "https://i.blogs.es/79f36c/portada-analisis-trailer-arcane-league-of-legends/1366_2000.jpeg" },
         { img: "https://cdn1.dotesports.com/wp-content/uploads/sites/3/2021/09/26143317/LUkXhMag.jpeg" }

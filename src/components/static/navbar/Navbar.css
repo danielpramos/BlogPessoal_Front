@@ -26,12 +26,14 @@
     border: 2px;
     color: #f2502c;
     padding: 0px 30px;
+
 }
 .navPaddingCanto{
     background-color: none;
     border-radius: 10px;
     padding: 0px 10px;
-    color: #ffffff; 
+    color: #ffffff;
+     
 }
 .navPaddingCanto:hover{
     border-bottom-style: double!important;

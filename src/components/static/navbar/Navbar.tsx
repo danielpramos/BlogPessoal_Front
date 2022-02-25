@@ -1,9 +1,21 @@
 import React from "react";
 import { AppBar, Toolbar, Box, Typography } from "@material-ui/core"
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
 import './Navbar.css'
 
 function Navbar() {
+    const [token, setToken] = useLocalStorage('token');
+    let history = useHistory();
+
+    function goLogout() {
+        setToken('');
+        alert('Usuário foi deslogado com sucesso!!')
+        history.push("/login");
+    }
+
+
+
     return (
         <>
 
@@ -49,34 +61,34 @@ function Navbar() {
                         </Box>
                     </Link>
 
-                    <Box className="navPadding navPadding:hover navSpaceRight" marginRight='auto' display="flex" justifyContent="start">
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Criar Tema
-                            </Typography>
+                    <Link to='/formularioTema' className='text-decorator-none'>
+                        <Box className="navPadding navPadding:hover navSpaceRight" marginRight='auto' display="flex" justifyContent="start">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Criar Tema
+                                </Typography>
+                            </Box>
                         </Box>
-                    </Box>
+                    </Link>
 
-                    <Link to='/login' className='text-decorator-none'>
+                   {/* <Link to='/login' className='text-decorator-none'>
                         <Box className="navPaddingCanto " display="flex" justifyContent="start">
                             <Box className="navPaddingCanto:hover cursor" mx={1}>
                                 <Typography variant="h6" color="inherit">
-
+                                    Login
                                 </Typography>
                             </Box>
                         </Box>
-                    </Link>
+                   </Link>*/}
 
-                    <Link to='/Login' className='text-decorator-none'>
-                        <Box className="navPaddingCanto" display="flex" justifyContent="start">
-                            <Box className="navPaddingCanto:hover cursor" mx={1}>
-                                <Typography className="navPaddingCanto:hover" variant="h6" color="inherit">
-                                    Logout
-                                </Typography>
-                            </Box>
+
+                    <Box className="navPaddingCanto navSpaceLeft" display="flex" justifyContent="start" onClick={goLogout}>
+                        <Box className="navPaddingCanto:hover " mx={1} paddingLeft= 'auto'>
+                            <Typography className="navPaddingCanto:hover" variant="h6" color="inherit">
+                                Logout
+                            </Typography>
                         </Box>
-
-                    </Link>
+                    </Box>
 
                 </Toolbar>
             </AppBar>
