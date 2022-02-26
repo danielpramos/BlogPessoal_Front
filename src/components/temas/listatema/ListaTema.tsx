@@ -31,10 +31,6 @@ function ListaTema() {
         getTema();
     }, [temas.length])
 
-
-
-
-
     return (
         <>
             {

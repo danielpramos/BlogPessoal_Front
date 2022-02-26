@@ -3,12 +3,56 @@ import {Box, Card, CardActions, CardContent, Button, Typography} from '@material
 import './DeletarTema.css';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-// import { buscaId, deleteId } from '../../../services/Service';
+import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 
 
 function DeletarTema() {
-  
+
+  let history = useHistory();
+    const {id} = useParams<{id: string}>();
+    const[token, setToken] = useLocalStorage('token');
+
+    const[tema, setTema] = useState<Tema>();
+
+    useEffect(()=>{
+        if(token === ""){
+            alert("Você precisa estar logado!");
+            history.push("/login");
+        }
+    }, [token]) 
+
+    useEffect(() => { 
+        if(id !== undefined){
+            findById(id)
+        }
+    },[ id ])
+
+
+
+    async function findById(id: string  ){
+        buscaId(`/temas/${id}`, setTema, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+        function sim(){
+          history.push('/temas')
+          deleteId(`/temas/${id}`, {
+            headers: {
+              'Authorization': token
+            }
+          })
+          alert('Tema excluido com sucesso!')
+        }
+
+        function nao(){
+          history.push('/temas')
+
+        }
+
           
   return (
     <>
@@ -20,19 +64,19 @@ function DeletarTema() {
                 Deseja deletar o Tema:
               </Typography>
               <Typography color="textSecondary">
-                tema
+                {tema?.descricao}
               </Typography>
             </Box>
           </CardContent>
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-                <Button variant="contained" className="marginLeft" size='large' color="primary">
+                <Button variant="contained" className="marginLeft" size='large' color="primary" onClick={sim}>
                   Sim
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button variant="contained" size='large' color="secondary">
+                <Button variant="contained" size='large' color="secondary" onClick={nao}>
                   Não
                 </Button>
               </Box>
