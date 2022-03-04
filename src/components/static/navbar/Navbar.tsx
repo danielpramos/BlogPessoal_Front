@@ -5,6 +5,7 @@ import './Navbar.css'
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
+import { toast } from 'react-toastify';
 
 function Navbar() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -15,7 +16,16 @@ function Navbar() {
 
     function goLogout() {
         dispatch(addToken(''))
-        alert('Usuário foi deslogado com sucesso!!')
+        toast.info('Usuário foi deslogado com sucesso!!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
         history.push("/login");
     }
 
@@ -24,14 +34,15 @@ function Navbar() {
     if (token != "") {
 
         navBarComponent =
-            <AppBar position="static">
+            <AppBar position="static" className="backgroundNavmar">
                 <Toolbar className="container" variant="dense">
 
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
+                        <Box mx={1} className='cursor logoImg'>
+                            
+                            {/* <Typography variant="h5" color="inherit">
                                 OtakuGeek
-                            </Typography>
+                            </Typography> */}
                         </Box>
                     </Box>
 

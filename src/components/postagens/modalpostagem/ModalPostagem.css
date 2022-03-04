@@ -5,4 +5,20 @@
 .btnModal{
     border-color: white !important;
     background-color: white !important;
+    color: #008000!important;
+    font-weight: bold!important;
+    border-color: #008000;
+    border: 2px!important;
+    border-style: double!important;
+    
+    
+    
 }
+.btnModal:hover{
+    transform: scale(1.2);
+    background-color: #edffb3!important;
+    color: #000000!important;
+  }
+  .espacoBotao{
+      padding-right: 20px;
+  }

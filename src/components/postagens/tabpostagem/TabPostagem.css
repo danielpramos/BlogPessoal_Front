@@ -1,3 +1,7 @@
 .tituloTab{
     font-weight: bold;
 }
+.backColor{
+    background: -webkit-linear-gradient(left, #10f7ff -10%, #ff0faf 100%)!important;
+    backface-visibility: hidden;
+}

@@ -5,6 +5,7 @@ import User from '../../models/User';
 import './CadastroUsuario.css';
 import { cadastroUsuario } from '../../services/Service';
 import CarouselComponent from '../../components/carousel/CarouselComponent';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -51,9 +52,27 @@ function CadastroUsuario() {
         e.preventDefault();
         if(confirmarSenha === user.senha && user.senha.length >= 8){
             cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            alert('Usuário cadastrado com sucesso')
+            toast.success('Usuário cadastrado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }else{
-            alert('Dados Inconsistentes. Favor verificar as informações de cadastro')
+            toast.error('Dados Inconsistentes. Favor verificar as informações de cadastro!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
         
     }

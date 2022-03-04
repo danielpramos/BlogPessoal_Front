@@ -1,6 +1,8 @@
 .box1{
-    background-color:#3F51B5!important;
+    /* background-color:#3F51B5!important; */
     height: 20vh;
+    background: -webkit-linear-gradient(left, #10f7ff -10%, #ff0faf 100%)!important;
+    backface-visibility: hidden;
 }
 .redes1{
     font-size: 40px!important; 
@@ -28,4 +30,8 @@
 }
 .textos{
     color: #ffffff!important;
+}
+
+.backgroundNavbar2{
+    
 }

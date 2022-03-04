@@ -1,10 +1,14 @@
 .cursor{
     cursor: pointer;
-    color: #ffffff;
+    /* color: #ffffff; */
 
 }
 .text-decorator-none{
     text-decoration: none;
+}
+.backgroundNavmar{
+    background: -webkit-linear-gradient(left, #10f7ff -10%, #ff0faf 100%)!important;
+    backface-visibility: hidden;
 }
 .navSpaceLeft{
     margin-left: auto!important;
@@ -15,10 +19,11 @@
 
   }
   .navPadding{
-      background-color: #349e9780;
+      /* background-color: #349e9780; */
       border-radius: 10px;
       padding: 0px 30px;
       margin: 0px 10px;
+      color: #3D3D3D!important;
   }
   .navPadding:hover{
     border-bottom-style: double!important;
@@ -33,6 +38,7 @@
     border-radius: 10px;
     padding: 0px 10px;
     color: #ffffff;
+    cursor: pointer;
      
 }
 .navPaddingCanto:hover{
@@ -47,6 +53,15 @@
 .container{
     /* justify-content: 100px!important; */
 }
-.button{
+.logoImg{
+    background-image: url('./images/Otakugueek.gif')!important;
+    /* background-image: url('./images/OtakugueekNome.gif')!important; */
+    width: 100px;
+    height: 40px;
+    display: block;
+    padding: 37px 0px 10px 0px  !important;
+    border-radius:10%;
+    opacity: 100%;
+    background-size: cover;
 
 }

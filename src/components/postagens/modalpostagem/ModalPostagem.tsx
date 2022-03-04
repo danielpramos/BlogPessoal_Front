@@ -57,7 +57,7 @@ function ModalPostagem () {
   );
 
   return (
-    <div>
+    <div className='espacoBotao'>
       <Button
         variant="outlined"
         className="btnModal"
