@@ -1,15 +1,18 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import './Login.css';
 import UserLogin from '../../models/UserLogin';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
+import CarouselComponent from '../../components/carousel/CarouselComponent';
 
 
 function Login() {
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('');
 
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
@@ -30,6 +33,7 @@ function Login() {
 
         useEffect(() => {
             if (token !== '') {
+                dispatch(addToken(token))
                 history.push('/home')
             }
         }, [token])
@@ -81,8 +85,8 @@ function Login() {
 
                 </Box>
             </Grid>
-            <Grid xs={6} className='imagem'>
-
+            <Grid xs={6} >  {/*className='imagem'*/}
+                <CarouselComponent/>
             </Grid>
         </Grid>
     );

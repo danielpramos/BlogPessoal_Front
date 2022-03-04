@@ -20,12 +20,14 @@ import Carousel from 'react-elastic-carousel';
  import harrypotter from '../../assets/images/HarryPotter.jpg';
  import perdidosnoespaco from '../../assets/images/PerdidosNoEspaco.jpg';
  import naruto from '../../assets/images/Naruto.jpg';
+ import alvin from '../../assets/images/Alvin.jpg'
 
 import './CarouselComponent.css'
 
 function CarouselComponent() {
     var items = [
         { img: arcane },
+        { img: alvin},
         { img: jujutsukaisen},
         { img: babyyoda},
         { img: homemaranha},

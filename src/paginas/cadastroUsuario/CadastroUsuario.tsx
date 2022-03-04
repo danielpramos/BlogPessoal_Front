@@ -4,6 +4,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import User from '../../models/User';
 import './CadastroUsuario.css';
 import { cadastroUsuario } from '../../services/Service';
+import CarouselComponent from '../../components/carousel/CarouselComponent';
 
 function CadastroUsuario() {
 
@@ -60,8 +61,8 @@ function CadastroUsuario() {
     return (
 
         <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid item xs={6} className='imagem2'>
-
+            <Grid item xs={6} > {/* className='imagem2' */}
+                <CarouselComponent/>
             </Grid>
             <Grid item xs={6} className=''>
                 <Box paddingX={10}>

@@ -1,24 +1,29 @@
 import React from "react";
 import { AppBar, Toolbar, Box, Typography } from "@material-ui/core"
 import { Link, useHistory } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import './Navbar.css'
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { addToken } from "../../../store/tokens/actions";
 
 function Navbar() {
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
     let history = useHistory();
+    const dispatch = useDispatch();
 
     function goLogout() {
-        setToken('');
+        dispatch(addToken(''))
         alert('Usuário foi deslogado com sucesso!!')
         history.push("/login");
     }
 
+    var navBarComponent;
 
+    if (token != "") {
 
-    return (
-        <>
-
+        navBarComponent =
             <AppBar position="static">
                 <Toolbar className="container" variant="dense">
 
@@ -71,19 +76,19 @@ function Navbar() {
                         </Box>
                     </Link>
 
-                   {/* <Link to='/login' className='text-decorator-none'>
-                        <Box className="navPaddingCanto " display="flex" justifyContent="start">
-                            <Box className="navPaddingCanto:hover cursor" mx={1}>
-                                <Typography variant="h6" color="inherit">
-                                    Login
-                                </Typography>
-                            </Box>
-                        </Box>
-                   </Link>*/}
+                    {/* <Link to='/login' className='text-decorator-none'>
+                <Box className="navPaddingCanto " display="flex" justifyContent="start">
+                    <Box className="navPaddingCanto:hover cursor" mx={1}>
+                        <Typography variant="h6" color="inherit">
+                            Login
+                        </Typography>
+                    </Box>
+                </Box>
+           </Link>*/}
 
 
                     <Box className="navPaddingCanto navSpaceLeft" display="flex" justifyContent="start" onClick={goLogout}>
-                        <Box className="navPaddingCanto:hover " mx={1} paddingLeft= 'auto'>
+                        <Box className="navPaddingCanto:hover " mx={1} paddingLeft='auto'>
                             <Typography className="navPaddingCanto:hover" variant="h6" color="inherit">
                                 Logout
                             </Typography>
@@ -92,6 +97,15 @@ function Navbar() {
 
                 </Toolbar>
             </AppBar>
+
+    }
+
+
+
+    return (
+        <>
+            {navBarComponent}
+
         </>
     )
 

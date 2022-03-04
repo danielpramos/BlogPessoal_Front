@@ -4,13 +4,16 @@ import './Home.css';
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 import CarouselComponent from "../../components/carousel/CarouselComponent";
 import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem";
-import { useHistory } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { Link, useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
 
 function Home() {
-    
+
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -31,9 +34,11 @@ function Home() {
 
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
-                            <ModalPostagem/>
+                            <ModalPostagem />
                         </Box>
-                        <Button className="hoverButton button" variant="outlined" >Ver Postagens</Button>
+                        <Link to="/postagens" className="decorator">
+                            <Button className="hoverButton button" variant="outlined" >Ver Postagens</Button>
+                        </Link>
                     </Box>
 
                 </Grid>
@@ -49,15 +54,15 @@ function Home() {
             </Grid>
             <Grid xs={12} direction='column' justifyContent="center" alignItems="center">
                 <Grid xs={12} className="fire titulo2" alignItems='center' justifyContent="center">
-                    <Typography  variant="h3">
+                    <Typography variant="h3">
                         Comente e contribua com a Comunidade!
                     </Typography>
-                    <Typography  className='titulo3' variant="h5">
+                    <Typography className='titulo3' variant="h5">
                         Diversos temas como: Animes, Filmes, Seriados!
                     </Typography>
                 </Grid>
                 <Grid>
-                <CarouselComponent />
+                    <CarouselComponent />
 
                 </Grid>
 
