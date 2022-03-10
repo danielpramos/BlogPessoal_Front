@@ -64,6 +64,9 @@
     /* /* background texto com Imagem gif */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color:white;
 }
 img{
     width: 600px;

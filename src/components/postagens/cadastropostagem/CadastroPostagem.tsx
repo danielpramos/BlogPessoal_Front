@@ -8,11 +8,13 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import User from '../../../models/User';
 
 function CadastroPostagem() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
-    const [temas, setTemas] = useState<Tema[]>([])
+    const [temas, setTemas] = useState<Tema[]>([]);
+    const [usuarios, setUsuarios] = useState<User[]>([]);
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
@@ -44,20 +46,40 @@ function CadastroPostagem() {
             id: 0,
             titulo: '',
             texto: '',
-            tema: null
+            tema: null,
+            usuario: null
         });
+
+    const [usuario, setUsuario] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            postagem: null
+        });
+
 
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: usuario
         })
-    }, [tema])
+    }, [tema, usuario])
 
     useEffect(() => {
         getTemas()
         if (id !== undefined) {
             findByIdPostagem(id);
+        }
+    }, [id])
+
+    useEffect(() => {
+        getUsuarios()
+        console.log(getUsuarios())
+        if (id !== undefined) {
+            findByIdUsuario(id);
         }
     }, [id])
 
@@ -69,8 +91,24 @@ function CadastroPostagem() {
         })
     }
 
+    async function getUsuarios() {
+        await busca(`/usuarios/all`, setUsuarios, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
     async function findByIdPostagem(id: string) {
-        await buscaId(`postagens/${id}`, setPostagem, {
+        await buscaId(`/postagens/${id}`, setPostagem, {
+            headers: {
+                'Authorization': token
+            }
+        })
+    }
+
+    async function findByIdUsuario(id: string) {
+        await buscaId(`/usuarios/${id}`, setUsuario, {
             headers: {
                 'Authorization': token
             }
@@ -82,7 +120,8 @@ function CadastroPostagem() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: usuario
         })
 
     }

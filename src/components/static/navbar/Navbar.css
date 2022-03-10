@@ -54,12 +54,13 @@
     /* justify-content: 100px!important; */
 }
 .logoImg{
-    background-image: url('./images/Otakugueek.gif')!important;
-    /* background-image: url('./images/OtakugueekNome.gif')!important; */
+    /* background-image: url('./images/Otakugueek.gif')!important; */
+    background-image: url('./images/OtakugueekRecort.gif')!important;
     width: 100px;
-    height: 40px;
+    height: auto;
     display: block;
-    padding: 37px 0px 10px 0px  !important;
+    /* padding: 37px 0px 10px 0px  !important; */
+    padding: 12px 0px 12px 5px !important;
     border-radius:10%;
     opacity: 100%;
     background-size: cover;
