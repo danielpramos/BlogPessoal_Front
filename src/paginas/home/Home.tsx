@@ -72,9 +72,8 @@ function Home() {
                         Diversos temas como: Animes, Filmes, Seriados!
                     </Typography>
                 </Grid>
-                <Grid>
+                <Grid className="carouselHome">
                     <CarouselComponent />
-
                 </Grid>
 
             </Grid>

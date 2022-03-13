@@ -47,14 +47,14 @@ function Login() {
     }
 
     useEffect(() => {
-        if(respUserLogin.token !== ""){
+        if (respUserLogin.token !== "") {
 
             // Verifica os dados pelo console (Opcional)
             console.log("Token: " + respUserLogin.token)
             console.log("ID: " + respUserLogin.id)
 
             // Guarda as informações dentro do Redux (Store)
-            dispatch(addToken(respUserLogin.token)) 
+            dispatch(addToken(respUserLogin.token))
             dispatch(addId(respUserLogin.id.toString()))    // Faz uma conversão de Number para String
             history.push('/home')
         }
@@ -124,7 +124,7 @@ function Login() {
 
                 </Box>
             </Grid>
-            <Grid xs={6} >  {/*className='imagem'*/}
+            <Grid xs={6} className='imagem'>
                 <CarouselComponent />
             </Grid>
         </Grid>

@@ -7,7 +7,7 @@
         background-image: url(https://www.10wallpaper.com/wallpaper/3840x2160/1804/2018_Avengers_Infinity_War_4K_Film_3840x2160.jpg);
         background-repeat: no-repeat; 
         width: 100vh; 
-        min-height: 100vh; 
+        height: 100vh!important; 
         background-size: cover; 
         background-position: center;
 }

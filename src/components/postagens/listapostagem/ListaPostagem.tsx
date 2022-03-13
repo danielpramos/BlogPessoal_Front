@@ -94,7 +94,7 @@ function ListaPostagem() {
                                     </Box>
 
                                     <Box >
-                                        <Avatar alt="Remy Sharp" src={postagem.usuario?.foto} />
+                                        <Avatar className='fotoAvatar' alt="Remy Sharp" src={postagem.usuario?.foto} />
                                     </Box>
                                 </Grid>
 

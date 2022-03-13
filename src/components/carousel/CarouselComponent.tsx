@@ -44,7 +44,7 @@ function CarouselComponent() {
 
     return (
         
-        <Carousel  isRTL={false} enableAutoPlay autoPlaySpeed={5000} easing="cubic-bezier(1,.15,.55,1.54)"
+        <Carousel className='img' isRTL={false} enableAutoPlay autoPlaySpeed={5000} easing="cubic-bezier(1,.15,.55,1.54)"
         tiltEasing="cubic-bezier(0.110, 1, 1.000, 0.210)"
         transitionMs={700} showArrows={false} >
             {
