@@ -12,6 +12,7 @@ import CadastroPostagem from './components/postagens/cadastropostagem/CadastroPo
 import CadastroTema from './components/temas/cadastrotema/CadastroTema';
 import DeletarPostagem from './components/postagens/deletarpostagem/DeletarPostagem';
 import DeletarTema from './components/temas/deletartema/DeletarTema';
+import Perfil from './paginas/Perfil/Perfil'
 import { Provider } from 'react-redux';
 import store from './store/store';
 import { ToastContainer } from 'react-toastify';
@@ -55,6 +56,10 @@ function App() {
               <ListaPostagem />
             </Route>
 
+            <Route path='/perfil'>
+              <Perfil />
+            </Route>
+
             <Route exact path='/formularioPostagem'>
               <CadastroPostagem />
             </Route>
@@ -73,8 +78,6 @@ function App() {
             <Route path='/deletarTema/:id'>
               <DeletarTema />
             </Route>
-
-
 
           </div>
         </Switch>

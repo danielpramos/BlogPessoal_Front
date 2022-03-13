@@ -1,23 +1,52 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import './CadastroPostagem.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/user/userReducer';
 import { toast } from 'react-toastify';
 import User from '../../../models/User';
+import './CadastroPostagem.css';
 
 function CadastroPostagem() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([]);
-    const [usuarios, setUsuarios] = useState<User[]>([]);
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
+    const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    );
+
+
+    const [tema, setTema] = useState<Tema>(
+        {
+            id: 0,
+            descricao: ''
+        });
+
+    const [postagem, setPostagem] = useState<Postagem>(
+        {
+            id: 0,
+            titulo: '',
+            texto: '',
+            data: '',
+            tema: null,
+            usuario: null
+        });
+
+    const [user, setUser] = useState<User>(
+        {
+            id: +userId,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: ''
+        });
 
     useEffect(() => {
         if (token == "") {
@@ -35,64 +64,23 @@ function CadastroPostagem() {
         }
     }, [token])
 
-    const [tema, setTema] = useState<Tema>(
-        {
-            id: 0,
-            descricao: ''
-        });
-
-    const [postagem, setPostagem] = useState<Postagem>(
-        {
-            id: 0,
-            titulo: '',
-            texto: '',
-            tema: null,
-            usuario: null
-        });
-
-    const [usuario, setUsuario] = useState<User>(
-        {
-            id: 0,
-            nome: '',
-            usuario: '',
-            senha: '',
-            postagem: null
-        });
-
-
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema,
-            usuario: usuario
+            tema: tema
         })
-    }, [tema, usuario])
+    }, [tema])
 
     useEffect(() => {
         getTemas()
-        if (id !== undefined) {
-            findByIdPostagem(id);
+        if (id !== '') {
+            findByIdPostagem(id)
         }
     }, [id])
 
-    useEffect(() => {
-        getUsuarios()
-        console.log(getUsuarios())
-        if (id !== undefined) {
-            findByIdUsuario(id);
-        }
-    }, [id])
 
     async function getTemas() {
-        await busca(`/temas`, setTemas, {
-            headers: {
-                'Authorization': token
-            }
-        })
-    }
-
-    async function getUsuarios() {
-        await busca(`/usuarios/all`, setUsuarios, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -100,15 +88,7 @@ function CadastroPostagem() {
     }
 
     async function findByIdPostagem(id: string) {
-        await buscaId(`/postagens/${id}`, setPostagem, {
-            headers: {
-                'Authorization': token
-            }
-        })
-    }
-
-    async function findByIdUsuario(id: string) {
-        await buscaId(`/usuarios/${id}`, setUsuario, {
+        await buscaId(`postagens/${id}`, setPostagem, {
             headers: {
                 'Authorization': token
             }
@@ -121,13 +101,15 @@ function CadastroPostagem() {
             ...postagem,
             [e.target.name]: e.target.value,
             tema: tema,
-            usuario: usuario
+            usuario: user
         })
 
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
+
+        console.log(postagem)
 
         if (id !== undefined) {
             put(`/postagens`, postagem, setPostagem, {
@@ -176,6 +158,7 @@ function CadastroPostagem() {
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
                 <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+
 
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>

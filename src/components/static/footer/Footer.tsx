@@ -6,10 +6,10 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { Grid, Box, Typography } from "@material-ui/core";
 import './Footer.css'
 import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import { UserState } from "../../../store/user/userReducer";
 
 function Footer() {
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 

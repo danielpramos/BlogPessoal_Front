@@ -1,11 +1,10 @@
-import Postagem from "./Postagem";
-
 interface User{
     id: number;
     nome: string;
     usuario: string;
-    senha: string;
-    postagem?: Postagem | null;
+    senha: string; // campo Foto
+    foto: string;
+
     
 }
 
