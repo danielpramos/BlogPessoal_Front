@@ -1,3 +1,26 @@
 .text-decorator-none{
     text-decoration: none;
 }
+.avatar{
+    display: flex;
+    justify-content: space-between;
+}
+.usuario{
+    display: flex;
+    direction: row;
+    align-items: top;
+    justify-content: center;
+    padding-right: 20px!important;
+}
+.usuarioNome{
+    padding-right: 20px!important;
+}
+.botaoEsquerda{
+    justify-content: end;
+}
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    padding: 20px!important;
+    
+}

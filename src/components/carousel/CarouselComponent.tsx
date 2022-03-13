@@ -25,7 +25,7 @@ import Carousel from 'react-elastic-carousel';
 import './CarouselComponent.css'
 
 function CarouselComponent() {
-    var items = [
+    var items  = [
         { img: arcane },
         { img: alvin},
         { img: jujutsukaisen},

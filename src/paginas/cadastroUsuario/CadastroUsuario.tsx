@@ -16,6 +16,7 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
+            foto: '',
             senha: ''
         });
 
@@ -24,6 +25,7 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
+            foto: '',
             senha: '' 
         });  
         
@@ -89,6 +91,7 @@ function CadastroUsuario() {
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2' >Cadastrar</Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth placeholder='Nome completo' required />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='email@email.com' required/>
+                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='imagem' label='Imagem' variant='outlined' name='imagem' margin='normal' fullWidth placeholder='Insira a Url'/>
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth placeholder='Senha de 8 digitos' required/>
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth   placeholder='Confirmar senha de 8 digitos' required/>
 
