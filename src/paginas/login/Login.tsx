@@ -105,7 +105,7 @@ function Login() {
                         <Box marginTop={2} textAlign='center'>
 
                             <Button type='submit' variant='contained' color='primary'>
-                                Logar
+                                Entrar
                             </Button>
 
                         </Box>
