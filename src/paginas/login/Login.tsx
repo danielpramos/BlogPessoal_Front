@@ -47,14 +47,14 @@ function Login() {
     }
 
     useEffect(() => {
-        if (respUserLogin.token !== "") {
+        if(respUserLogin.token !== ""){
 
             // Verifica os dados pelo console (Opcional)
             console.log("Token: " + respUserLogin.token)
             console.log("ID: " + respUserLogin.id)
 
             // Guarda as informações dentro do Redux (Store)
-            dispatch(addToken(respUserLogin.token))
+            dispatch(addToken(respUserLogin.token)) 
             dispatch(addId(respUserLogin.id.toString()))    // Faz uma conversão de Number para String
             history.push('/home')
         }
@@ -98,7 +98,10 @@ function Login() {
             <Grid alignItems='center' xs={6}>
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1' >Entrar</Typography>
+                        {/* <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1' >Entrar</Typography> */}
+                        <Box className='logoImg'>
+
+                        </Box>
                         <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth placeholder='email@email.com' required />
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth placeholder='Senha de 8 dígitos' required />
 
@@ -124,8 +127,8 @@ function Login() {
 
                 </Box>
             </Grid>
-            <Grid xs={6} className='imagem'>
-                <CarouselComponent />
+            <Grid xs={6}  className='imagem'>
+                {/* <CarouselComponent /> */}
             </Grid>
         </Grid>
     );

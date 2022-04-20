@@ -4,7 +4,6 @@
 .avatar{
     display: flex;
     justify-content: space-between;
-
 }
 .usuario{
     display: flex;
@@ -27,5 +26,5 @@
 }
 .fotoAvatar{
     background-size: cover;
-    padding: 10px, 0px, 10px,0px!important;
+    padding: 10px, 0px, 10px, 0px!important;
 }
