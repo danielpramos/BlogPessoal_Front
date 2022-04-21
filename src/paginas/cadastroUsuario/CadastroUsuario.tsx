@@ -1,4 +1,5 @@
-import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
+import { Grid, Typography, TextField, Button } from '@material-ui/core';
+import { Box } from "@mui/material";
 import { Link, useHistory } from 'react-router-dom';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import User from '../../models/User';

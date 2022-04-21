@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Box, Card, CardActions, CardContent, Button, Typography, Grid, Avatar } from '@material-ui/core';
+import { Card, CardActions, CardContent, Button, Typography, Grid, Avatar } from '@material-ui/core';
+import { Box } from "@mui/material"
 import './ListaPostagem.css';
 import Postagem from '../../../models/Postagem';
 // import User from '../../../models/User'
@@ -55,7 +56,6 @@ function ListaPostagem() {
     useEffect(() => {
         getPostagem();
     }, [postagens.length])
-
 
     return (
         <>
