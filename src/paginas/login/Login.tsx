@@ -7,7 +7,7 @@ import './Login.css';
 import UserLogin from '../../models/UserLogin';
 import { useDispatch } from 'react-redux';
 import { addId, addToken } from '../../store/user/action';
-// import CarouselComponent from '../../components/carousel/CarouselComponent';
+import CarouselComponent from '../../components/carousel/CarouselComponent';
 import { toast } from 'react-toastify';
 
 
@@ -128,8 +128,8 @@ function Login() {
 
                 </Box>
             </Grid>
-            <Grid xs={6}  className='imagem'>
-                {/* <CarouselComponent /> */}
+            <Grid xs={6}  >
+                <CarouselComponent />
             </Grid>
         </Grid>
     );
